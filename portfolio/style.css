@@ -1,0 +1,468 @@
+/* ==========================================
+   1. GLOBAL VARIABLES & RESET
+   ========================================== */
+:root {
+    --primary-gold: #D4AF37; /* Elegant metallic gold */
+    --dark-bg: #050505;      /* Deep black */
+    --section-bg: #0f0f0f;   /* Slightly lighter dark for contrast */
+    --text-light: #e0e0e0;   /* Light gray for readable paragraphs */
+    --font-cursive: 'Great Vibes', cursive;
+    --font-body: 'Raleway', sans-serif;
+}
+
+/* Reset default margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Smooth scrolling for anchor links */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Base body styling */
+body {
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* ==========================================
+   2. NAVIGATION BAR
+   ========================================== */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(5, 5, 5, 0.95);
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    backdrop-filter: blur(10px); /* Modern frosted glass effect */
+}
+
+.logo {
+    font-family: var(--font-cursive);
+    font-size: 2.8rem;
+    color: var(--primary-gold);
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-light);
+    font-size: 0.85rem;
+    transition: color 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.nav-links a:hover {
+    color: var(--primary-gold);
+}
+
+/* Mobile Hamburger Menu (Hidden on Desktop) */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 6px;
+    z-index: 1001;
+}
+
+.hamburger span {
+    width: 30px;
+    height: 2px;
+    background-color: var(--primary-gold);
+    transition: all 0.3s ease;
+}
+
+/* ==========================================
+   3. LANDING PAGE
+   ========================================== */
+.landing {
+    height: 100vh;
+    /* Dark, elegant coding environment background */
+    background: linear-gradient(rgba(5, 5, 5, 0.85), rgba(5, 5, 5, 0.95)),
+                url('https://images.unsplash.com/photo-1550439062-609e1531270e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.landing h1 {
+    font-family: var(--font-cursive);
+    font-size: 8rem;
+    color: var(--primary-gold);
+    font-weight: normal;
+    text-shadow: 2px 2px 15px rgba(212, 175, 55, 0.2);
+    margin-bottom: 5px;
+}
+
+.landing p {
+    font-size: 1.2rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 40px;
+}
+
+.landing-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Reusable Buttons */
+.btn {
+    padding: 12px 35px;
+    background: var(--primary-gold);
+    color: var(--dark-bg);
+    border: 1px solid var(--primary-gold);
+    font-family: var(--font-body);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background: transparent;
+    color: var(--primary-gold);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--primary-gold);
+}
+
+.btn-outline:hover {
+    background: var(--primary-gold);
+    color: var(--dark-bg);
+}
+
+/* ==========================================
+   4. COMMON SECTIONS
+   ========================================== */
+section {
+    padding: 120px 10%;
+}
+
+.section-title {
+    font-family: var(--font-cursive);
+    font-size: 4rem;
+    color: var(--primary-gold);
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: normal;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #888;
+    margin-bottom: 60px;
+}
+
+/* ==========================================
+   5. ABOUT PAGE
+   ========================================== */
+.about {
+    background-color: var(--section-bg);
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+    font-size: 1.05rem;
+    color: #ccc;
+}
+
+.about-text strong {
+    color: var(--primary-gold);
+    font-weight: 600;
+}
+
+.accent-line {
+    width: 60px;
+    height: 2px;
+    background-color: var(--primary-gold);
+    margin-bottom: 25px;
+}
+
+/* Skill tags layout */
+.skills {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.skills span {
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    padding: 8px 15px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--primary-gold);
+}
+
+.about-image {
+    flex: 1;
+    /* Elegant server/code abstract background */
+    background: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80') center/cover no-repeat;
+    height: 500px;
+    border: 1px solid var(--primary-gold);
+    box-shadow: -15px 15px 0px rgba(212, 175, 55, 0.1); /* Elegant offset shadow */
+}
+
+/* ==========================================
+   6. PROJECTS PAGE
+   ========================================== */
+.projects {
+    background-color: var(--dark-bg);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+}
+
+.project-card {
+    background-color: var(--section-bg);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    overflow: hidden;
+    transition: transform 0.4s ease, border-color 0.4s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Card hover animation */
+.project-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary-gold);
+    box-shadow: 0px 10px 30px rgba(212, 175, 55, 0.05);
+}
+
+.project-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    opacity: 0.8;
+    transition: opacity 0.4s ease;
+}
+
+.project-card:hover img {
+    opacity: 1;
+}
+
+.project-info {
+    padding: 30px;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.project-info h3 {
+    font-family: var(--font-cursive);
+    font-size: 2.5rem;
+    color: var(--primary-gold);
+    font-weight: normal;
+    margin-bottom: 15px;
+}
+
+.project-info p {
+    font-size: 0.95rem;
+    color: #aaa;
+    margin-bottom: 25px;
+}
+
+.btn-small {
+    padding: 8px 20px;
+    border: 1px solid var(--primary-gold);
+    color: var(--primary-gold);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    align-self: center;
+}
+
+.btn-small:hover {
+    background-color: var(--primary-gold);
+    color: var(--dark-bg);
+}
+
+/* ==========================================
+   7. CONTACT PAGE
+   ========================================== */
+.contact {
+    background-color: var(--section-bg);
+}
+
+.contact-form {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-group {
+    display: flex;
+    gap: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 18px;
+    background-color: var(--dark-bg);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    color: var(--text-light);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+/* Form focus states */
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--primary-gold);
+}
+
+.contact-form textarea {
+    height: 180px;
+    resize: vertical;
+}
+
+.contact-form .btn {
+    align-self: center;
+    width: 250px;
+}
+
+/* ==========================================
+   8. FOOTER
+   ========================================== */
+footer {
+    text-align: center;
+    padding: 40px;
+    background-color: var(--dark-bg);
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+    font-size: 0.9rem;
+    color: #888;
+}
+
+footer .footer-name {
+    color: var(--primary-gold);
+    font-family: var(--font-cursive);
+    font-size: 1.8rem;
+    margin: 0 5px;
+}
+
+/* ==========================================
+   9. RESPONSIVE DESIGN (Tablets & Mobile)
+   ========================================== */
+@media (max-width: 900px) {
+    /* Adjust about layout to stack */
+    .about {
+        flex-direction: column;
+    }
+   
+    .about-image {
+        width: 100%;
+        height: 350px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Mobile Navigation */
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links {
+        position: fixed;
+        right: -100%; /* Hidden off-screen by default */
+        top: 0;
+        height: 100vh;
+        width: 100%;
+        background-color: rgba(5, 5, 5, 0.98);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: right 0.4s ease;
+    }
+
+    /* Class added via JavaScript for mobile menu */
+    .nav-links.nav-active {
+        right: 0;
+    }
+
+    .nav-links li {
+        margin: 20px 0;
+    }
+
+    .nav-links a {
+        font-size: 1.2rem;
+    }
+
+    /* Typography scale down */
+    .landing h1 {
+        font-size: 5rem;
+    }
+
+    .section-title {
+        font-size: 3rem;
+    }
+
+    .landing-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    /* Contact form tweaks */
+    .input-group {
+        flex-direction: column;
+    }
+
+    /* Section spacing adjustments */
+    section {
+        padding: 80px 5%;
+    }
+} 
+
